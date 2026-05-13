@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MediCare — My Bookings</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -16,16 +16,16 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="home.html" class="nav-brand">
+      <a href="./home.html" class="nav-brand">
         <div class="nav-brand-icon"><i class="fa-solid fa-heart-pulse"></i></div>
         <span class="nav-brand-name">MediCare</span>
       </a>
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="home.html"        class="nav-link">Home</a></li>
-          <li><a href="specialties.html" class="nav-link">Specialties</a></li>
-          <li><a href="booking.html"     class="nav-link active">Booking</a></li>
-          <li><a href="contact.html"     class="nav-link">Contact</a></li>
+          <li><a href="./home.html"        class="nav-link">Home</a></li>
+          <li><a href="./specialties.html" class="nav-link">Specialties</a></li>
+          <li><a href="./booking.html"     class="nav-link active">Booking</a></li>
+          <li><a href="./contact.html"     class="nav-link">Contact</a></li>
         </ul>
         <div class="nav-divider"></div>
         <div class="nav-user" id="navUser">
@@ -41,10 +41,10 @@
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="home.html"        class="mob-link"><i class="fa-solid fa-house"></i> Home</a>
-      <a href="specialties.html" class="mob-link"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
-      <a href="booking.html"     class="mob-link active"><i class="fa-solid fa-calendar-check"></i> Booking</a>
-      <a href="contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="./home.html"        class="mob-link"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="./specialties.html" class="mob-link"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
+      <a href="./booking.html"     class="mob-link active"><i class="fa-solid fa-calendar-check"></i> Booking</a>
+      <a href="./contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
       <button class="mob-logout" onclick="handleLogout()">
         <i class="fa-solid fa-right-from-bracket"></i> Logout
       </button>
@@ -72,7 +72,7 @@
       <div class="empty-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
       <h3>No appointments yet</h3>
       <p>You haven't booked any appointments. Browse our specialists and book your first one!</p>
-      <a href="specialties.html" class="empty-cta">
+      <a href="./specialties.html" class="empty-cta">
         <i class="fa-solid fa-stethoscope"></i> Browse Specialties
       </a>
     </div>
@@ -108,6 +108,6 @@
     <span id="bookingToastMsg"></span>
   </div>
 
-  <script src="booking.js"></script>
+  <script src="../js/booking.js"></script>
 </body>
 </html>

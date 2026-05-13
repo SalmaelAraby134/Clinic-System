@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MediCare — Specialties</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -16,16 +16,16 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="home.html" class="nav-brand">
+      <a href="./home.html" class="nav-brand">
         <div class="nav-brand-icon"><i class="fa-solid fa-heart-pulse"></i></div>
         <span class="nav-brand-name">MediCare</span>
       </a>
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="home.html"        class="nav-link">Home</a></li>
-          <li><a href="specialties.html" class="nav-link active">Specialties</a></li>
-          <li><a href="booking.html"     class="nav-link">Booking</a></li>
-          <li><a href="contact.html"     class="nav-link">Contact</a></li>
+          <li><a href="./home.html"        class="nav-link">Home</a></li>
+          <li><a href="./specialties.html" class="nav-link active">Specialties</a></li>
+          <li><a href="./booking.html"     class="nav-link">Booking</a></li>
+          <li><a href="./contact.html"     class="nav-link">Contact</a></li>
         </ul>
         <div class="nav-divider"></div>
         <div class="nav-user" id="navUser">
@@ -41,10 +41,10 @@
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="home.html"        class="mob-link"><i class="fa-solid fa-house"></i> Home</a>
-      <a href="specialties.html" class="mob-link active"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
-      <a href="booking.html"     class="mob-link"><i class="fa-solid fa-calendar-check"></i> Booking</a>
-      <a href="contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="./home.html"        class="mob-link"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="./specialties.html" class="mob-link active"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
+      <a href="./booking.html"     class="mob-link"><i class="fa-solid fa-calendar-check"></i> Booking</a>
+      <a href="./contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
       <button class="mob-logout" onclick="handleLogout()">
         <i class="fa-solid fa-right-from-bracket"></i> Logout
       </button>
@@ -69,7 +69,7 @@
     <div class="spec-grid">
 
       <!-- 1. Internal Medicine -->
-      <a href="doctors-internal.html" class="spec-card" style="--delay:0.1s">
+      <a href="./doctors-internal.html" class="spec-card" style="--delay:0.1s">
         <div class="spec-card-glow"></div>
         <div class="spec-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
         <div class="spec-card-body">
@@ -86,7 +86,7 @@
       </a>
 
       <!-- 2. Surgery -->
-      <a href="doctors-surgery.html" class="spec-card" style="--delay:0.2s">
+      <a href="./doctors-surgery.html" class="spec-card" style="--delay:0.2s">
         <div class="spec-card-glow"></div>
         <div class="spec-card-icon"><i class="fa-solid fa-scissors"></i></div>
         <div class="spec-card-body">
@@ -103,7 +103,7 @@
       </a>
 
       <!-- 3. Cosmetic -->
-      <a href="doctors-cosmetic.html" class="spec-card" style="--delay:0.3s">
+      <a href="./doctors-cosmetic.html" class="spec-card" style="--delay:0.3s">
         <div class="spec-card-glow"></div>
         <div class="spec-card-icon"><i class="fa-solid fa-spa"></i></div>
         <div class="spec-card-body">
@@ -120,7 +120,7 @@
       </a>
 
       <!-- 4. Neurology -->
-      <a href="doctors-neurology.html" class="spec-card" style="--delay:0.4s">
+      <a href="./doctors-neurology.html" class="spec-card" style="--delay:0.4s">
         <div class="spec-card-glow"></div>
         <div class="spec-card-icon"><i class="fa-solid fa-brain"></i></div>
         <div class="spec-card-body">
@@ -137,7 +137,7 @@
       </a>
 
       <!-- 5. Psychiatry -->
-      <a href="doctors-psychiatry.html" class="spec-card" style="--delay:0.5s">
+      <a href="./doctors-psychiatry.html" class="spec-card" style="--delay:0.5s">
         <div class="spec-card-glow"></div>
         <div class="spec-card-icon"><i class="fa-solid fa-head-side-virus"></i></div>
         <div class="spec-card-body">
@@ -154,7 +154,7 @@
       </a>
 
       <!-- 6. Ophthalmology -->
-      <a href="doctors-ophthalmology.html" class="spec-card" style="--delay:0.6s">
+      <a href="./doctors-ophthalmology.html" class="spec-card" style="--delay:0.6s">
         <div class="spec-card-glow"></div>
         <div class="spec-card-icon"><i class="fa-solid fa-eye"></i></div>
         <div class="spec-card-body">
@@ -173,6 +173,6 @@
     </div>
   </main>
 
-  <script src="home.js"></script>
+  <script src="../js/home.js"></script>
 </body>
 </html>

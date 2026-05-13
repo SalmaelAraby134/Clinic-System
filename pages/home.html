@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MediCare Clinic — Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -21,7 +21,7 @@
     <div class="nav-inner">
 
       <!-- LEFT: Brand icon on top, name below -->
-      <a href="home.html" class="nav-brand">
+      <a href="./home.html" class="nav-brand">
         <div class="nav-brand-icon">
           <i class="fa-solid fa-heart-pulse"></i>
         </div>
@@ -31,10 +31,10 @@
       <!-- RIGHT: links + user + logout -->
       <div class="nav-right">
         <ul class="nav-links" id="navLinks">
-          <li><a href="home.html"        class="nav-link active">Home</a></li>
-          <li><a href="specialties.html" class="nav-link">Specialties</a></li>
-          <li><a href="booking.html"     class="nav-link">Booking</a></li>
-          <li><a href="contact.html"     class="nav-link">Contact</a></li>
+          <li><a href="./home.html"        class="nav-link active">Home</a></li>
+          <li><a href="./specialties.html" class="nav-link">Specialties</a></li>
+          <li><a href="./booking.html"     class="nav-link">Booking</a></li>
+          <li><a href="./contact.html"     class="nav-link">Contact</a></li>
         </ul>
 
         <div class="nav-divider"></div>
@@ -58,10 +58,10 @@
 
     <!-- Mobile Dropdown -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="home.html"        class="mob-link active"><i class="fa-solid fa-house"></i> Home</a>
-      <a href="specialties.html" class="mob-link"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
-      <a href="booking.html"     class="mob-link"><i class="fa-solid fa-calendar-check"></i> Booking</a>
-      <a href="contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="./home.html"        class="mob-link active"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="./specialties.html" class="mob-link"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
+      <a href="./booking.html"     class="mob-link"><i class="fa-solid fa-calendar-check"></i> Booking</a>
+      <a href="./contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
       <button class="mob-logout" onclick="handleLogout()">
         <i class="fa-solid fa-right-from-bracket"></i> Logout
       </button>
@@ -90,10 +90,10 @@
       </p>
 
       <div class="hero-actions">
-        <a href="booking.html" class="cta-primary">
+        <a href="./booking.html" class="cta-primary">
           <i class="fa-solid fa-calendar-plus"></i> Book Appointment
         </a>
-        <a href="specialties.html" class="cta-ghost">
+        <a href="./specialties.html" class="cta-ghost">
           Explore Specialties <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
@@ -125,6 +125,6 @@
 
   <div class="scroll-hint"><i class="fa-solid fa-chevron-down"></i></div>
 
-  <script src="home.js"></script>
+  <script src="../js/home.js"></script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MediCare — Neurology Doctors</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>MediCare — Surgery Doctors</title>
+  <link rel="stylesheet" href="../css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -14,16 +14,16 @@
 
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="home.html" class="nav-brand">
+      <a href="./home.html" class="nav-brand">
         <div class="nav-brand-icon"><i class="fa-solid fa-heart-pulse"></i></div>
         <span class="nav-brand-name">MediCare</span>
       </a>
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="home.html"        class="nav-link">Home</a></li>
-          <li><a href="specialties.html" class="nav-link active">Specialties</a></li>
-          <li><a href="booking.html"     class="nav-link">Booking</a></li>
-          <li><a href="contact.html"     class="nav-link">Contact</a></li>
+          <li><a href="./home.html"        class="nav-link">Home</a></li>
+          <li><a href="./specialties.html" class="nav-link active">Specialties</a></li>
+          <li><a href="./booking.html"     class="nav-link">Booking</a></li>
+          <li><a href="./contact.html"     class="nav-link">Contact</a></li>
         </ul>
         <div class="nav-divider"></div>
         <div class="nav-user" id="navUser">
@@ -39,24 +39,24 @@
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="home.html"        class="mob-link"><i class="fa-solid fa-house"></i> Home</a>
-      <a href="specialties.html" class="mob-link active"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
-      <a href="booking.html"     class="mob-link"><i class="fa-solid fa-calendar-check"></i> Booking</a>
-      <a href="contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="./home.html"        class="mob-link"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="./specialties.html" class="mob-link active"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
+      <a href="./booking.html"     class="mob-link"><i class="fa-solid fa-calendar-check"></i> Booking</a>
+      <a href="./contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
       <button class="mob-logout" onclick="handleLogout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
     </div>
   </nav>
 
   <main class="doctors-page">
     <div class="doc-header">
-      <a href="specialties.html" class="doc-back-btn">
+      <a href="./specialties.html" class="doc-back-btn">
         <i class="fa-solid fa-arrow-left"></i> Back to Specialties
       </a>
       <div class="doc-header-badge">
-        <i class="fa-solid fa-brain"></i>
-        <span>Neurology Department</span>
+        <i class="fa-solid fa-scissors"></i>
+        <span>Surgery Department</span>
       </div>
-      <h1 class="doc-header-title">Our <em>Neurology</em> Doctors</h1>
+      <h1 class="doc-header-title">Our <em>Surgery</em> Doctors</h1>
       <p class="doc-header-sub">Meet our experienced specialists and book your appointment today.</p>
     </div>
 
@@ -65,17 +65,17 @@
         <div class="doc-card-accent"></div>
         <div class="doc-card-content">
           <div class="doc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
-          <div class="doc-name">Dr. Hossam Zaki</div>
-          <div class="doc-specialty-tag"><i class="fa-solid fa-circle-check"></i>Neurology</div>
+          <div class="doc-name">Dr. Khaled Nour</div>
+          <div class="doc-specialty-tag"><i class="fa-solid fa-circle-check"></i>Surgery</div>
           <div class="doc-info">
-            <div class="doc-info-row"><i class="fa-solid fa-location-dot"></i><span>9 Agouza, Giza</span></div>
-            <div class="doc-info-row"><i class="fa-solid fa-phone"></i><span>+20 100 444 5566</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-location-dot"></i><span>8 Mohandessin Blvd, Giza</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-phone"></i><span>+20 100 987 6543</span></div>
             <div class="doc-info-row"><i class="fa-solid fa-clock"></i><span>Available Times:</span></div>
           </div>
-          <div class="doc-times"><span class="doc-time-slot">Sun 10AM-2PM</span><span class="doc-time-slot">Wed 9AM-1PM</span><span class="doc-time-slot">Sat 11AM-3PM</span></div>
+          <div class="doc-times"><span class="doc-time-slot">Sun 10AM-2PM</span><span class="doc-time-slot">Tue 3PM-7PM</span><span class="doc-time-slot">Thu 9AM-1PM</span></div>
         </div>
         <div class="doc-card-footer">
-          <button class="doc-book-btn" onclick="openBookingModalFromHTML('Dr. Hossam Zaki', 'Neurology', 'Sun 10AM-2PM / Wed 9AM-1PM / Sat 11AM-3PM')">
+          <button class="doc-book-btn" onclick="openBookingModalFromHTML('Dr. Khaled Nour', 'Surgery', 'Sun 10AM-2PM / Tue 3PM-7PM / Thu 9AM-1PM')">
             <i class="fa-solid fa-calendar-plus"></i> Book Now
           </button>
         </div>
@@ -84,17 +84,17 @@
         <div class="doc-card-accent"></div>
         <div class="doc-card-content">
           <div class="doc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
-          <div class="doc-name">Dr. Dina Mahmoud</div>
-          <div class="doc-specialty-tag"><i class="fa-solid fa-circle-check"></i>Neurology</div>
+          <div class="doc-name">Dr. Mona Adel</div>
+          <div class="doc-specialty-tag"><i class="fa-solid fa-circle-check"></i>Surgery</div>
           <div class="doc-info">
-            <div class="doc-info-row"><i class="fa-solid fa-location-dot"></i><span>25 Nasr City, Cairo</span></div>
-            <div class="doc-info-row"><i class="fa-solid fa-phone"></i><span>+20 111 555 6677</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-location-dot"></i><span>14 Zamalek, Cairo</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-phone"></i><span>+20 111 876 5432</span></div>
             <div class="doc-info-row"><i class="fa-solid fa-clock"></i><span>Available Times:</span></div>
           </div>
-          <div class="doc-times"><span class="doc-time-slot">Mon 9AM-1PM</span><span class="doc-time-slot">Tue 2PM-6PM</span><span class="doc-time-slot">Thu 8AM-12PM</span></div>
+          <div class="doc-times"><span class="doc-time-slot">Mon 8AM-12PM</span><span class="doc-time-slot">Wed 1PM-5PM</span><span class="doc-time-slot">Sat 9AM-1PM</span></div>
         </div>
         <div class="doc-card-footer">
-          <button class="doc-book-btn" onclick="openBookingModalFromHTML('Dr. Dina Mahmoud', 'Neurology', 'Mon 9AM-1PM / Tue 2PM-6PM / Thu 8AM-12PM')">
+          <button class="doc-book-btn" onclick="openBookingModalFromHTML('Dr. Mona Adel', 'Surgery', 'Mon 8AM-12PM / Wed 1PM-5PM / Sat 9AM-1PM')">
             <i class="fa-solid fa-calendar-plus"></i> Book Now
           </button>
         </div>
@@ -103,17 +103,17 @@
         <div class="doc-card-accent"></div>
         <div class="doc-card-content">
           <div class="doc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
-          <div class="doc-name">Dr. Tarek Ismail</div>
-          <div class="doc-specialty-tag"><i class="fa-solid fa-circle-check"></i>Neurology</div>
+          <div class="doc-name">Dr. Youssef Samir</div>
+          <div class="doc-specialty-tag"><i class="fa-solid fa-circle-check"></i>Surgery</div>
           <div class="doc-info">
-            <div class="doc-info-row"><i class="fa-solid fa-location-dot"></i><span>11 Mohandessin, Giza</span></div>
-            <div class="doc-info-row"><i class="fa-solid fa-phone"></i><span>+20 122 666 7788</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-location-dot"></i><span>30 Dokki St, Giza</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-phone"></i><span>+20 122 765 4321</span></div>
             <div class="doc-info-row"><i class="fa-solid fa-clock"></i><span>Available Times:</span></div>
           </div>
-          <div class="doc-times"><span class="doc-time-slot">Tue 10AM-2PM</span><span class="doc-time-slot">Wed 1PM-5PM</span><span class="doc-time-slot">Fri 9AM-1PM</span></div>
+          <div class="doc-times"><span class="doc-time-slot">Tue 9AM-1PM</span><span class="doc-time-slot">Thu 2PM-6PM</span><span class="doc-time-slot">Fri 8AM-12PM</span></div>
         </div>
         <div class="doc-card-footer">
-          <button class="doc-book-btn" onclick="openBookingModalFromHTML('Dr. Tarek Ismail', 'Neurology', 'Tue 10AM-2PM / Wed 1PM-5PM / Fri 9AM-1PM')">
+          <button class="doc-book-btn" onclick="openBookingModalFromHTML('Dr. Youssef Samir', 'Surgery', 'Tue 9AM-1PM / Thu 2PM-6PM / Fri 8AM-12PM')">
             <i class="fa-solid fa-calendar-plus"></i> Book Now
           </button>
         </div>
@@ -174,7 +174,7 @@
     </div>
   </div>
 
-  <script src="doctors.js"></script>
+  <script src="../js/doctors.js"></script>
 
 </body>
 </html>
