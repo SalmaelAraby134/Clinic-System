@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediCare — Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="admin-body">
+
+  <!-- Background -->
+  <div class="admin-bg"></div>
+  <div class="admin-bg-overlay"></div>
+  <div class="admin-grid-lines"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+      <div class="sidebar-brand-text">
+        <span class="sidebar-brand-name">MediCare</span>
+        <span class="sidebar-brand-sub">Admin Panel</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <a class="sidebar-link active" onclick="showSection('overview')" href="#">
+        <i class="fa-solid fa-chart-pie"></i><span>Overview</span>
+      </a>
+      <a class="sidebar-link" onclick="showSection('doctors')" href="#">
+        <i class="fa-solid fa-user-doctor"></i><span>Doctors</span>
+      </a>
+      <a class="sidebar-link" onclick="showSection('bookings')" href="#">
+        <i class="fa-solid fa-calendar-check"></i><span>Bookings</span>
+      </a>
+
+      <div class="nav-section-label" style="margin-top:20px;">System</div>
+      <a class="sidebar-link" onclick="showSection('settings')" href="#">
+        <i class="fa-solid fa-gear"></i><span>Settings</span>
+      </a>
+      <a class="sidebar-link logout-link" onclick="adminLogout()" href="#">
+        <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-admin-info">
+      <div class="sidebar-admin-avatar"><i class="fa-solid fa-user-shield"></i></div>
+      <div>
+        <div class="sidebar-admin-name">Admin</div>
+        <div class="sidebar-admin-email">admin@medicare.com</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="admin-main" id="adminMain">
+
+    <!-- Top Bar -->
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" onclick="toggleSidebar()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="topbar-title" id="topbarTitle">Overview</div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-date" id="topbarDate"></div>
+        <div class="topbar-badge">
+          <i class="fa-solid fa-shield-halved"></i> Admin
+        </div>
+      </div>
+    </header>
+
+    <!-- Toast -->
+    <div class="admin-toast" id="adminToast">
+      <i class="fa-solid fa-circle-check"></i>
+      <span id="adminToastMsg"></span>
+    </div>
+
+    <!-- ══ OVERVIEW SECTION ══ -->
+    <section class="admin-section active" id="section-overview">
+      <div class="section-header">
+        <h2>Dashboard <em>Overview</em></h2>
+        <p>Welcome back, Admin. Here's what's happening today.</p>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="stats-grid">
+        <div class="stat-card" style="--accent:#0a9396">
+          <div class="stat-card-icon"><i class="fa-solid fa-user-doctor"></i></div>
+          <div class="stat-card-info">
+            <span class="stat-card-num" id="statDoctors">0</span>
+            <span class="stat-card-label">Total Doctors</span>
+          </div>
+          <div class="stat-card-trend"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        </div>
+        <div class="stat-card" style="--accent:#2dbd88">
+          <div class="stat-card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <div class="stat-card-info">
+            <span class="stat-card-num" id="statBookings">0</span>
+            <span class="stat-card-label">Total Bookings</span>
+          </div>
+          <div class="stat-card-trend"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        </div>
+        <div class="stat-card" style="--accent:#94d2bd">
+          <div class="stat-card-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <div class="stat-card-info">
+            <span class="stat-card-num" id="statSpecialties">6</span>
+            <span class="stat-card-label">Specialties</span>
+          </div>
+          <div class="stat-card-trend"><i class="fa-solid fa-minus"></i></div>
+        </div>
+        <div class="stat-card" style="--accent:#e9d8a6">
+          <div class="stat-card-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="stat-card-info">
+            <span class="stat-card-num" id="statUsers">0</span>
+            <span class="stat-card-label">Registered Users</span>
+          </div>
+          <div class="stat-card-trend"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        </div>
+      </div>
+
+      <!-- Recent Bookings -->
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Bookings</h3>
+        </div>
+        <div class="admin-card-body" id="overviewBookings">
+          <p class="empty-msg">No bookings yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ DOCTORS SECTION ══ -->
+    <section class="admin-section" id="section-doctors">
+      <div class="section-header">
+        <h2>Manage <em>Doctors</em></h2>
+        <p>Add, edit, or remove doctors from the system.</p>
+      </div>
+
+      <!-- Add Doctor Form -->
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h3><i class="fa-solid fa-user-plus"></i> Add New Doctor</h3>
+        </div>
+        <div class="admin-card-body">
+          <div class="form-grid">
+            <div class="af-group">
+              <label>Doctor Name</label>
+              <div class="af-input-wrap">
+                <i class="fa-solid fa-user af-icon"></i>
+                <input type="text" id="newDocName" placeholder="Dr. Full Name" />
+              </div>
+            </div>
+            <div class="af-group">
+              <label>Specialty</label>
+              <div class="af-input-wrap">
+                <i class="fa-solid fa-stethoscope af-icon"></i>
+                <select id="newDocSpec">
+                  <option value="">Select Specialty</option>
+                  <option>Internal Medicine</option>
+                  <option>Surgery</option>
+                  <option>Cosmetic</option>
+                  <option>Neurology</option>
+                  <option>Psychiatry</option>
+                  <option>Ophthalmology</option>
+                </select>
+              </div>
+            </div>
+            <div class="af-group">
+              <label>Phone Number</label>
+              <div class="af-input-wrap">
+                <i class="fa-solid fa-phone af-icon"></i>
+                <input type="text" id="newDocPhone" placeholder="+20 1xx xxx xxxx" />
+              </div>
+            </div>
+            <div class="af-group">
+              <label>Address</label>
+              <div class="af-input-wrap">
+                <i class="fa-solid fa-location-dot af-icon"></i>
+                <input type="text" id="newDocAddr" placeholder="Clinic address" />
+              </div>
+            </div>
+            <div class="af-group full-width">
+              <label>Available Times</label>
+              <div class="af-input-wrap">
+                <i class="fa-solid fa-clock af-icon"></i>
+                <input type="text" id="newDocTimes" placeholder="e.g. Mon 9AM–1PM, Wed 2PM–6PM" />
+              </div>
+            </div>
+          </div>
+          <button class="admin-btn primary" onclick="addDoctor()">
+            <i class="fa-solid fa-plus"></i> Add Doctor
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctors List -->
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h3><i class="fa-solid fa-list"></i> All Doctors</h3>
+          <span class="card-badge" id="doctorCount">0 doctors</span>
+        </div>
+        <div class="admin-card-body" id="doctorsList">
+          <p class="empty-msg">No doctors added yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ BOOKINGS SECTION ══ -->
+    <section class="admin-section" id="section-bookings">
+      <div class="section-header">
+        <h2>All <em>Bookings</em></h2>
+        <p>View and manage all patient appointments.</p>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h3><i class="fa-solid fa-calendar-check"></i> Appointments</h3>
+          <button class="admin-btn danger-sm" onclick="clearAllBookings()">
+            <i class="fa-solid fa-trash-can"></i> Clear All
+          </button>
+        </div>
+        <div class="admin-card-body" id="allBookingsList">
+          <p class="empty-msg">No bookings found.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SETTINGS SECTION ══ -->
+    <section class="admin-section" id="section-settings">
+      <div class="section-header">
+        <h2>System <em>Settings</em></h2>
+        <p>Manage clinic information and system preferences.</p>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h3><i class="fa-solid fa-hospital"></i> Clinic Information</h3>
+        </div>
+        <div class="admin-card-body">
+          <div class="form-grid">
+            <div class="af-group">
+              <label>Clinic Name</label>
+              <div class="af-input-wrap">
+                <i class="fa-solid fa-hospital af-icon"></i>
+                <input type="text" id="settingName" value="MediCare Clinic" />
+              </div>
+            </div>
+            <div class="af-group">
+              <label>Clinic Phone</label>
+              <div class="af-input-wrap">
+                <i class="fa-solid fa-phone af-icon"></i>
+                <input type="text" id="settingPhone" value="+20 100 123 4567" />
+              </div>
+            </div>
+            <div class="af-group">
+              <label>Clinic Email</label>
+              <div class="af-input-wrap">
+                <i class="fa-solid fa-envelope af-icon"></i>
+                <input type="text" id="settingEmail" value="info@medicare-clinic.com" />
+              </div>
+            </div>
+            <div class="af-group">
+              <label>Working Hours</label>
+              <div class="af-input-wrap">
+                <i class="fa-solid fa-clock af-icon"></i>
+                <input type="text" id="settingHours" value="8:00 AM – 9:00 PM" />
+              </div>
+            </div>
+          </div>
+          <button class="admin-btn primary" onclick="saveSettings()">
+            <i class="fa-solid fa-floppy-disk"></i> Save Settings
+          </button>
+        </div>
+      </div>
+
+      <!-- Danger Zone -->
+      <div class="admin-card danger-card">
+        <div class="admin-card-header">
+          <h3><i class="fa-solid fa-triangle-exclamation"></i> Danger Zone</h3>
+        </div>
+        <div class="admin-card-body">
+          <div class="danger-row">
+            <div>
+              <strong>Clear All Users</strong>
+              <p>Permanently delete all registered users.</p>
+            </div>
+            <button class="admin-btn danger" onclick="clearUsers()">
+              <i class="fa-solid fa-trash-can"></i> Clear Users
+            </button>
+          </div>
+          <div class="danger-row">
+            <div>
+              <strong>Clear All Bookings</strong>
+              <p>Permanently delete all appointments.</p>
+            </div>
+            <button class="admin-btn danger" onclick="clearAllBookings()">
+              <i class="fa-solid fa-trash-can"></i> Clear Bookings
+            </button>
+          </div>
+          <div class="danger-row">
+            <div>
+              <strong>Clear All Doctors</strong>
+              <p>Remove all doctors from the system.</p>
+            </div>
+            <button class="admin-btn danger" onclick="clearDoctors()">
+              <i class="fa-solid fa-trash-can"></i> Clear Doctors
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Edit Doctor Modal -->
+  <div class="admin-modal-overlay" id="editModal">
+    <div class="admin-modal">
+      <div class="admin-modal-header">
+        <h3><i class="fa-solid fa-pen-to-square"></i> Edit Doctor</h3>
+        <button class="modal-close" onclick="closeEditModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="admin-modal-body">
+        <input type="hidden" id="editDocId" />
+        <div class="form-grid">
+          <div class="af-group">
+            <label>Doctor Name</label>
+            <div class="af-input-wrap">
+              <i class="fa-solid fa-user af-icon"></i>
+              <input type="text" id="editDocName" />
+            </div>
+          </div>
+          <div class="af-group">
+            <label>Specialty</label>
+            <div class="af-input-wrap">
+              <i class="fa-solid fa-stethoscope af-icon"></i>
+              <select id="editDocSpec">
+                <option>Internal Medicine</option>
+                <option>Surgery</option>
+                <option>Cosmetic</option>
+                <option>Neurology</option>
+                <option>Psychiatry</option>
+                <option>Ophthalmology</option>
+              </select>
+            </div>
+          </div>
+          <div class="af-group">
+            <label>Phone</label>
+            <div class="af-input-wrap">
+              <i class="fa-solid fa-phone af-icon"></i>
+              <input type="text" id="editDocPhone" />
+            </div>
+          </div>
+          <div class="af-group">
+            <label>Address</label>
+            <div class="af-input-wrap">
+              <i class="fa-solid fa-location-dot af-icon"></i>
+              <input type="text" id="editDocAddr" />
+            </div>
+          </div>
+          <div class="af-group full-width">
+            <label>Available Times</label>
+            <div class="af-input-wrap">
+              <i class="fa-solid fa-clock af-icon"></i>
+              <input type="text" id="editDocTimes" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="admin-modal-footer">
+        <button class="admin-btn ghost" onclick="closeEditModal()">Cancel</button>
+        <button class="admin-btn primary" onclick="saveEditDoctor()">
+          <i class="fa-solid fa-floppy-disk"></i> Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediCare — Specialties</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="home-page">
+
+  <div class="home-bg-image"></div>
+  <div class="home-bg-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-brand">
+        <div class="nav-brand-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <span class="nav-brand-name">MediCare</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="home.html"        class="nav-link">Home</a></li>
+          <li><a href="specialties.html" class="nav-link active">Specialties</a></li>
+          <li><a href="booking.html"     class="nav-link">Booking</a></li>
+          <li><a href="contact.html"     class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-divider"></div>
+        <div class="nav-user" id="navUser">
+          <i class="fa-solid fa-circle-user"></i>
+          <span id="navUserPhone"></span>
+        </div>
+        <button class="nav-logout" onclick="handleLogout()">
+          <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+        </button>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html"        class="mob-link"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="specialties.html" class="mob-link active"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
+      <a href="booking.html"     class="mob-link"><i class="fa-solid fa-calendar-check"></i> Booking</a>
+      <a href="contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="mob-logout" onclick="handleLogout()">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <main class="spec-page">
+
+    <div class="spec-header">
+      <div class="spec-header-badge">
+        <i class="fa-solid fa-stethoscope"></i>
+        <span>Our Medical Departments</span>
+      </div>
+      <h1 class="spec-header-title">Choose Your <em>Specialty</em></h1>
+      <p class="spec-header-sub">
+        World-class care across all major medical fields.<br/>
+        Select a specialty to meet our expert doctors.
+      </p>
+    </div>
+
+    <div class="spec-grid">
+
+      <!-- 1. Internal Medicine -->
+      <a href="doctors-internal.html" class="spec-card" style="--delay:0.1s">
+        <div class="spec-card-glow"></div>
+        <div class="spec-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="spec-card-body">
+          <h3>Internal Medicine</h3>
+          <p>Comprehensive diagnosis and treatment of adult diseases affecting internal organs.</p>
+          <ul class="spec-tags">
+            <li>Cardiology</li><li>Gastroenterology</li><li>Endocrinology</li>
+          </ul>
+        </div>
+        <div class="spec-card-footer">
+          <span>View Doctors</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 2. Surgery -->
+      <a href="doctors-surgery.html" class="spec-card" style="--delay:0.2s">
+        <div class="spec-card-glow"></div>
+        <div class="spec-card-icon"><i class="fa-solid fa-scissors"></i></div>
+        <div class="spec-card-body">
+          <h3>Surgery</h3>
+          <p>Advanced surgical procedures performed by our highly experienced surgical team.</p>
+          <ul class="spec-tags">
+            <li>General Surgery</li><li>Laparoscopic</li><li>Vascular</li>
+          </ul>
+        </div>
+        <div class="spec-card-footer">
+          <span>View Doctors</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 3. Cosmetic -->
+      <a href="doctors-cosmetic.html" class="spec-card" style="--delay:0.3s">
+        <div class="spec-card-glow"></div>
+        <div class="spec-card-icon"><i class="fa-solid fa-spa"></i></div>
+        <div class="spec-card-body">
+          <h3>Cosmetic</h3>
+          <p>Aesthetic and reconstructive procedures to help you look and feel your best.</p>
+          <ul class="spec-tags">
+            <li>Skin Care</li><li>Rhinoplasty</li><li>Fillers</li>
+          </ul>
+        </div>
+        <div class="spec-card-footer">
+          <span>View Doctors</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 4. Neurology -->
+      <a href="doctors-neurology.html" class="spec-card" style="--delay:0.4s">
+        <div class="spec-card-glow"></div>
+        <div class="spec-card-icon"><i class="fa-solid fa-brain"></i></div>
+        <div class="spec-card-body">
+          <h3>Neurology</h3>
+          <p>Expert care for disorders of the brain, spine, and nervous system.</p>
+          <ul class="spec-tags">
+            <li>Epilepsy</li><li>Stroke</li><li>Migraines</li>
+          </ul>
+        </div>
+        <div class="spec-card-footer">
+          <span>View Doctors</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 5. Psychiatry -->
+      <a href="doctors-psychiatry.html" class="spec-card" style="--delay:0.5s">
+        <div class="spec-card-glow"></div>
+        <div class="spec-card-icon"><i class="fa-solid fa-head-side-virus"></i></div>
+        <div class="spec-card-body">
+          <h3>Psychiatry</h3>
+          <p>Compassionate mental health care for anxiety, depression, and beyond.</p>
+          <ul class="spec-tags">
+            <li>Anxiety</li><li>Depression</li><li>Therapy</li>
+          </ul>
+        </div>
+        <div class="spec-card-footer">
+          <span>View Doctors</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 6. Ophthalmology -->
+      <a href="doctors-ophthalmology.html" class="spec-card" style="--delay:0.6s">
+        <div class="spec-card-glow"></div>
+        <div class="spec-card-icon"><i class="fa-solid fa-eye"></i></div>
+        <div class="spec-card-body">
+          <h3>Ophthalmology</h3>
+          <p>Complete eye care from routine exams to advanced surgical vision correction.</p>
+          <ul class="spec-tags">
+            <li>LASIK</li><li>Cataract</li><li>Retina</li>
+          </ul>
+        </div>
+        <div class="spec-card-footer">
+          <span>View Doctors</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <script src="home.js"></script>
+</body>
+</html>

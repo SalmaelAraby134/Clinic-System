@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediCare Clinic — Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="home-page">
+
+  <!-- Background -->
+  <div class="home-bg-image"></div>
+  <div class="home-bg-overlay"></div>
+
+  <!-- ══════════════════════════════
+       NAVBAR
+  ══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+
+      <!-- LEFT: Brand icon on top, name below -->
+      <a href="home.html" class="nav-brand">
+        <div class="nav-brand-icon">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <span class="nav-brand-name">MediCare</span>
+      </a>
+
+      <!-- RIGHT: links + user + logout -->
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="home.html"        class="nav-link active">Home</a></li>
+          <li><a href="specialties.html" class="nav-link">Specialties</a></li>
+          <li><a href="booking.html"     class="nav-link">Booking</a></li>
+          <li><a href="contact.html"     class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-divider"></div>
+
+        <div class="nav-user" id="navUser">
+          <i class="fa-solid fa-circle-user"></i>
+          <span id="navUserPhone"></span>
+        </div>
+
+        <button class="nav-logout" onclick="handleLogout()">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout</span>
+        </button>
+
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html"        class="mob-link active"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="specialties.html" class="mob-link"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
+      <a href="booking.html"     class="mob-link"><i class="fa-solid fa-calendar-check"></i> Booking</a>
+      <a href="contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="mob-logout" onclick="handleLogout()">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       HERO
+  ══════════════════════════════ -->
+  <main class="hero">
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        <i class="fa-solid fa-shield-heart"></i>
+        <span>Trusted Healthcare Since 2010</span>
+      </div>
+
+      <h1 class="hero-title">
+        Welcome to<br/>
+        <em>Our Clinic</em>
+      </h1>
+
+      <p class="hero-sub">
+        We are here to take care of you.<br/>
+        Your health is our highest priority.
+      </p>
+
+      <div class="hero-actions">
+        <a href="booking.html" class="cta-primary">
+          <i class="fa-solid fa-calendar-plus"></i> Book Appointment
+        </a>
+        <a href="specialties.html" class="cta-ghost">
+          Explore Specialties <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-num">15+</span>
+          <span class="stat-label">Specialties</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">80+</span>
+          <span class="stat-label">Doctors</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">50k+</span>
+          <span class="stat-label">Patients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">Support</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="scroll-hint"><i class="fa-solid fa-chevron-down"></i></div>
+
+  <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediCare — Psychiatry Doctors</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="home-page">
+  <div class="home-bg-image"></div>
+  <div class="home-bg-overlay"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-brand">
+        <div class="nav-brand-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <span class="nav-brand-name">MediCare</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="home.html"        class="nav-link">Home</a></li>
+          <li><a href="specialties.html" class="nav-link active">Specialties</a></li>
+          <li><a href="booking.html"     class="nav-link">Booking</a></li>
+          <li><a href="contact.html"     class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-divider"></div>
+        <div class="nav-user" id="navUser">
+          <i class="fa-solid fa-circle-user"></i>
+          <span id="navUserPhone"></span>
+        </div>
+        <button class="nav-logout" onclick="handleLogout()">
+          <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+        </button>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html"        class="mob-link"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="specialties.html" class="mob-link active"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
+      <a href="booking.html"     class="mob-link"><i class="fa-solid fa-calendar-check"></i> Booking</a>
+      <a href="contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="mob-logout" onclick="handleLogout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </nav>
+
+  <main class="doctors-page">
+    <div class="doc-header">
+      <a href="specialties.html" class="doc-back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Specialties
+      </a>
+      <div class="doc-header-badge">
+        <i class="fa-solid fa-head-side-virus"></i>
+        <span>Psychiatry Department</span>
+      </div>
+      <h1 class="doc-header-title">Our <em>Psychiatry</em> Doctors</h1>
+      <p class="doc-header-sub">Meet our experienced specialists and book your appointment today.</p>
+    </div>
+
+    <div class="doc-grid" id="doc-grid">
+      <div class="doc-card" style="--delay:0.1s">
+        <div class="doc-card-accent"></div>
+        <div class="doc-card-content">
+          <div class="doc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+          <div class="doc-name">Dr. Amira Lotfy</div>
+          <div class="doc-specialty-tag"><i class="fa-solid fa-circle-check"></i>Psychiatry</div>
+          <div class="doc-info">
+            <div class="doc-info-row"><i class="fa-solid fa-location-dot"></i><span>6 Garden City, Cairo</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-phone"></i><span>+20 100 777 8899</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-clock"></i><span>Available Times:</span></div>
+          </div>
+          <div class="doc-times"><span class="doc-time-slot">Sun 9AM-1PM</span><span class="doc-time-slot">Tue 2PM-6PM</span><span class="doc-time-slot">Thu 10AM-2PM</span></div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="doc-book-btn" onclick="openBookingModalFromHTML('Dr. Amira Lotfy', 'Psychiatry', 'Sun 9AM-1PM / Tue 2PM-6PM / Thu 10AM-2PM')">
+            <i class="fa-solid fa-calendar-plus"></i> Book Now
+          </button>
+        </div>
+      </div>
+      <div class="doc-card" style="--delay:0.2s">
+        <div class="doc-card-accent"></div>
+        <div class="doc-card-content">
+          <div class="doc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+          <div class="doc-name">Dr. Sherif Nabil</div>
+          <div class="doc-specialty-tag"><i class="fa-solid fa-circle-check"></i>Psychiatry</div>
+          <div class="doc-info">
+            <div class="doc-info-row"><i class="fa-solid fa-location-dot"></i><span>33 Maadi, Cairo</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-phone"></i><span>+20 111 888 9900</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-clock"></i><span>Available Times:</span></div>
+          </div>
+          <div class="doc-times"><span class="doc-time-slot">Mon 10AM-2PM</span><span class="doc-time-slot">Wed 3PM-7PM</span><span class="doc-time-slot">Sat 9AM-1PM</span></div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="doc-book-btn" onclick="openBookingModalFromHTML('Dr. Sherif Nabil', 'Psychiatry', 'Mon 10AM-2PM / Wed 3PM-7PM / Sat 9AM-1PM')">
+            <i class="fa-solid fa-calendar-plus"></i> Book Now
+          </button>
+        </div>
+      </div>
+      <div class="doc-card" style="--delay:0.3s">
+        <div class="doc-card-accent"></div>
+        <div class="doc-card-content">
+          <div class="doc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+          <div class="doc-name">Dr. Rana Ibrahim</div>
+          <div class="doc-specialty-tag"><i class="fa-solid fa-circle-check"></i>Psychiatry</div>
+          <div class="doc-info">
+            <div class="doc-info-row"><i class="fa-solid fa-location-dot"></i><span>17 Zamalek, Cairo</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-phone"></i><span>+20 122 999 0011</span></div>
+            <div class="doc-info-row"><i class="fa-solid fa-clock"></i><span>Available Times:</span></div>
+          </div>
+          <div class="doc-times"><span class="doc-time-slot">Tue 8AM-12PM</span><span class="doc-time-slot">Thu 1PM-5PM</span><span class="doc-time-slot">Fri 10AM-2PM</span></div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="doc-book-btn" onclick="openBookingModalFromHTML('Dr. Rana Ibrahim', 'Psychiatry', 'Tue 8AM-12PM / Thu 1PM-5PM / Fri 10AM-2PM')">
+            <i class="fa-solid fa-calendar-plus"></i> Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+  <!-- Booking Modal -->
+  <div class="booking-modal-overlay" id="bookingModal">
+    <div class="booking-modal">
+      <div class="booking-modal-header">
+        <div class="booking-modal-icon"><i class="fa-solid fa-calendar-plus"></i></div>
+        <div>
+          <h3 id="modalDocName">Doctor Name</h3>
+          <span id="modalDocSpec" class="modal-spec-tag"></span>
+        </div>
+        <button class="booking-modal-close" onclick="closeBookingModal()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="booking-modal-body">
+        <div class="modal-times-preview">
+          <i class="fa-solid fa-clock"></i>
+          <span id="modalTimesStr"></span>
+        </div>
+
+        <div class="modal-form-group">
+          <label>Select Day</label>
+          <div class="modal-select-wrap">
+            <i class="fa-solid fa-calendar-days modal-select-icon"></i>
+            <select id="modalDaySelect" onchange="onDayChange()">
+              <option value="">-- Select Day --</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-form-group">
+          <label>Select Time</label>
+          <div class="modal-select-wrap">
+            <i class="fa-solid fa-clock modal-select-icon"></i>
+            <select id="modalHourSelect" disabled>
+              <option value="">-- Select Day First --</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="modal-error" id="modalError" style="display:none;">Please select both day and time!</p>
+      </div>
+
+      <div class="booking-modal-footer">
+        <button class="modal-cancel-btn" onclick="closeBookingModal()">Cancel</button>
+        <button class="modal-confirm-btn" onclick="confirmBooking()">
+          <i class="fa-solid fa-circle-check"></i> Confirm Booking
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="doctors.js"></script>
+
+</body>
+</html>

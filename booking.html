@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediCare — My Bookings</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="home-page">
+
+  <div class="home-bg-image"></div>
+  <div class="home-bg-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-brand">
+        <div class="nav-brand-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <span class="nav-brand-name">MediCare</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="home.html"        class="nav-link">Home</a></li>
+          <li><a href="specialties.html" class="nav-link">Specialties</a></li>
+          <li><a href="booking.html"     class="nav-link active">Booking</a></li>
+          <li><a href="contact.html"     class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-divider"></div>
+        <div class="nav-user" id="navUser">
+          <i class="fa-solid fa-circle-user"></i>
+          <span id="navUserPhone"></span>
+        </div>
+        <button class="nav-logout" onclick="handleLogout()">
+          <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+        </button>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html"        class="mob-link"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="specialties.html" class="mob-link"><i class="fa-solid fa-stethoscope"></i> Specialties</a>
+      <a href="booking.html"     class="mob-link active"><i class="fa-solid fa-calendar-check"></i> Booking</a>
+      <a href="contact.html"     class="mob-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="mob-logout" onclick="handleLogout()">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE -->
+  <main class="booking-page">
+
+    <!-- Header -->
+    <div class="booking-header">
+      <div class="booking-badge">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span>Appointments Manager</span>
+      </div>
+      <h1 class="booking-title">My <em>Bookings</em></h1>
+      <p class="booking-sub">All your scheduled appointments in one place.</p>
+    </div>
+
+    <!-- Stats row -->
+    <div class="booking-stats" id="bookingStats"></div>
+
+    <!-- Empty state -->
+    <div class="booking-empty" id="bookingEmpty" style="display:none;">
+      <div class="empty-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+      <h3>No appointments yet</h3>
+      <p>You haven't booked any appointments. Browse our specialists and book your first one!</p>
+      <a href="specialties.html" class="empty-cta">
+        <i class="fa-solid fa-stethoscope"></i> Browse Specialties
+      </a>
+    </div>
+
+    <!-- Bookings list -->
+    <div class="booking-list" id="bookingList"></div>
+
+    <!-- Clear all -->
+    <div class="booking-clear-wrap" id="clearWrap" style="display:none;">
+      <button class="booking-clear-btn" onclick="confirmClearAll()">
+        <i class="fa-solid fa-trash-can"></i> Clear All Appointments
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Confirm Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="modal-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <h3 id="modalTitle">Remove Appointment?</h3>
+      <p id="modalMsg">Are you sure you want to remove this booking?</p>
+      <div class="modal-actions">
+        <button class="modal-cancel" onclick="closeModal()">Cancel</button>
+        <button class="modal-confirm" id="modalConfirmBtn">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="booking-toast" id="bookingToast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="bookingToastMsg"></span>
+  </div>
+
+  <script src="booking.js"></script>
+</body>
+</html>

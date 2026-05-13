@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediCare — Admin Login</title>
+  <link rel="stylesheet" href="admin.css"/>
+  <link rel="stylesheet" href="admin-login.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="admin-login-body">
+
+  <div class="admin-bg"></div>
+  <div class="admin-bg-overlay"></div>
+  <div class="admin-grid-lines"></div>
+
+  <div class="alog-wrapper">
+
+    <!-- Brand -->
+    <div class="alog-brand">
+      <div class="alog-brand-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+      <div>
+        <div class="alog-brand-name">MediCare</div>
+        <div class="alog-brand-sub">Administration Portal</div>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="alog-card">
+
+      <div class="alog-card-top">
+        <div class="alog-shield"><i class="fa-solid fa-user-shield"></i></div>
+        <h2>Admin Access</h2>
+        <p>Restricted area — authorized personnel only</p>
+      </div>
+
+      <div class="alog-toast" id="alogToast"></div>
+
+      <div class="alog-form">
+
+        <div class="alog-group">
+          <label>Email Address</label>
+          <div class="alog-input-wrap">
+            <i class="fa-solid fa-envelope alog-icon"></i>
+            <input type="email" id="alogEmail" placeholder="admin@medicare.com" />
+          </div>
+          <span class="alog-err" id="alogEmailErr"></span>
+        </div>
+
+        <div class="alog-group">
+          <label>Phone Number</label>
+          <div class="alog-input-wrap">
+            <i class="fa-solid fa-phone alog-icon"></i>
+            <input type="text" id="alogPhone" placeholder="+20 100 123 4567" />
+          </div>
+          <span class="alog-err" id="alogPhoneErr"></span>
+        </div>
+
+        <div class="alog-group">
+          <label>Password</label>
+          <div class="alog-input-wrap">
+            <i class="fa-solid fa-lock alog-icon"></i>
+            <input type="password" id="alogPass" placeholder="••••••••" />
+            <button class="alog-toggle" onclick="toggleAdminPass(this)" tabindex="-1">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+          <span class="alog-err" id="alogPassErr"></span>
+        </div>
+
+        <button class="alog-btn" onclick="handleAdminLogin()">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Access Dashboard</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <a href="index.html" class="alog-back">
+          <i class="fa-solid fa-arrow-left"></i> Back to Main Site
+        </a>
+
+      </div>
+    </div>
+
+    <div class="alog-footer-tag">
+      <i class="fa-solid fa-lock"></i> Encrypted & Secure Access
+    </div>
+
+  </div>
+
+  <script src="admin-login.js"></script>
+</body>
+</html>
