@@ -12,36 +12,82 @@ A responsive clinic portal prototype built with plain HTML, CSS, and JavaScript.
 - Admin login portal for restricted access
 - Modern glassmorphism UI with animated backgrounds and toast notifications
 
-## Project Pages
+## Project Structure
 
-- `index.html` - Main login/signup page for patients
-- `home.html` - Authenticated landing page after sign-in
-- `specialties.html` - Medical specialty overview
-- `booking.html` - Appointment booking interface
-- `contact.html` - Contact and support page
-- `admin-login.html` - Admin portal login page
+```
+clini-system/
+├── index.html              # Main login/signup page
+├── README.md
+├── css/
+│   ├── style.css           # Shared global styling
+│   ├── admin.css           # Admin portal styles
+│   └── admin-login.css     # Admin login styles
+├── js/
+│   ├── script.js           # Login/signup logic and validation
+│   ├── home.js             # Session management and navigation
+│   ├── booking.js          # Booking functionality
+│   ├── contact.js          # Contact form handling
+│   ├── doctors.js          # Doctor specialties
+│   ├── admin.js            # Admin dashboard
+│   └── admin-login.js      # Admin login interactions
+└── pages/
+    ├── home.html           # Authenticated home page
+    ├── specialties.html    # Medical specialties overview
+    ├── booking.html        # Appointment booking
+    ├── contact.html        # Contact and support
+    ├── admin-login.html    # Admin portal login
+    ├── admin.html          # Admin dashboard
+    └── doctors-*.html      # Specialty pages
+        ├── doctors-cosmetic.html
+        ├── doctors-internal.html
+        ├── doctors-neurology.html
+        ├── doctors-ophthalmology.html
+        ├── doctors-psychiatry.html
+        └── doctors-surgery.html
+```
 
 ## Main Files
 
-- `style.css` - Shared global styling and layout
-- `script.js` - Login/signup logic and form validation
-- `home.js` - Session guard, logout, and responsive navigation behavior
-- `admin.css`, `admin-login.css` - Admin portal styles
+**CSS Styling** (`css/`)
+- `style.css` - Shared global styling, layout, and responsive design
+- `admin.css` - Admin dashboard and portal styles
+- `admin-login.css` - Admin login page styles
+
+**JavaScript** (`js/`)
+- `script.js` - Login/signup logic, form validation, and authentication
+- `home.js` - Session management, logout, and responsive navigation
+- `booking.js` - Appointment booking functionality
+- `contact.js` - Contact form handling
+- `doctors.js` - Specialty and doctor filtering
+- `admin.js` - Admin dashboard interactions
 - `admin-login.js` - Admin login interactions
 
-## How to Use
+**Pages** (`pages/`)
+- `home.html` - Authenticated landing page after sign-in
+- `specialties.html` - Medical specialty overview with filter options
+- `booking.html` - Appointment booking interface
+- `contact.html` - Contact and support page
+- `admin-login.html` - Admin portal login page
+- `admin.html` - Admin dashboard
+- `doctors-*.html` - Individual specialty pages (6 specialties)
+
+## Getting Started
 
 1. Open `index.html` in a web browser.
-2. Create an account using the sign-up form or log in with an existing user.
-3. After successful login, the app redirects to `home.html`.
-4. Use the navigation links to explore specialties, book appointments, or contact the clinic.
-5. Visit `admin-login.html` to access the administration portal.
+2. Create an account using the sign-up form or log in with existing credentials.
+3. After successful authentication, you'll be redirected to the home page (`pages/home.html`).
+4. Use the navigation menu to explore:
+   - **Specialties** - Browse medical departments and view doctors
+   - **Booking** - Schedule appointments
+   - **Contact** - Send messages to the clinic
+5. Access the admin portal by clicking the "Admin Portal" link on the login page or navigating directly to `pages/admin-login.html`.
 
 ## Notes
 
 - This project is a static frontend prototype and does not include a backend server.
 - User accounts and sessions are stored locally in the browser using `localStorage`.
 - For a production-ready app, replace `localStorage` with secure server-side authentication and data storage.
+- **Project Organization**: Files are organized into logical folders (`css/`, `js/`, `pages/`) for better maintainability and scalability.
 
 ## Technology Stack
 
