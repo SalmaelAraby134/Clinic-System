@@ -3,7 +3,7 @@
 // ── Auth Guard ──────────────────────────────
 (function () {
   const session = JSON.parse(localStorage.getItem('medicareSession') || '{}');
-  if (!session.loggedIn) window.location.href = 'index.html';
+  if (!session.loggedIn) window.location.href = '../index.html';
   else {
     const el = document.getElementById('navUserPhone');
     if (el) el.textContent = session.phone || '';
@@ -13,7 +13,7 @@
 // ── Navbar ──────────────────────────────────
 function handleLogout() {
   localStorage.removeItem('medicareSession');
-  window.location.href = 'index.html';
+  window.location.href = '../index.html';
 }
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);

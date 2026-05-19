@@ -1,5 +1,6 @@
 /* === MediCare — admin-login.js === */
 
+// Admin credentials (single source of truth)
 const ADMIN = {
   email:    'admin@medicare.com',
   phone:    '+20 100 123 4567',
@@ -9,7 +10,7 @@ const ADMIN = {
 // If already logged in as admin, go to dashboard
 (function() {
   const s = JSON.parse(localStorage.getItem('adminSession') || '{}');
-  if (s.isAdmin) window.location.href = 'admin.html';
+  if (s.isAdmin) window.location.href = '../pages/admin.html';
 })();
 
 function toggleAdminPass(btn) {
@@ -58,7 +59,7 @@ function handleAdminLogin() {
 
   localStorage.setItem('adminSession', JSON.stringify({ isAdmin: true, email }));
   showToast('Access granted! Redirecting…', 'success');
-  setTimeout(() => { window.location.href = 'admin.html'; }, 1400);
+  setTimeout(() => { window.location.href = '../pages/admin.html'; }, 1400);
 }
 
 document.addEventListener('keydown', e => {

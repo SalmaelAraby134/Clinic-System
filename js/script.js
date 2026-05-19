@@ -110,7 +110,7 @@ function handleLogin() {
   if (user.password !== pass) { setError('loginPass','loginPassErr','Incorrect password. Please try again.'); return; }
   localStorage.setItem('medicareSession', JSON.stringify({ phone: user.phone, email: user.email, loggedIn: true }));
   showToast('Welcome back! Redirecting…', 'success');
-  setTimeout(() => { window.location.href = 'home.html'; }, 1500);
+  setTimeout(() => { window.location.href = 'pages/home.html'; }, 1500);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

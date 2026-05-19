@@ -11,7 +11,7 @@ const ADMIN = {
 (function () {
   const session = JSON.parse(localStorage.getItem('adminSession') || '{}');
   if (!session.isAdmin) {
-    window.location.href = 'admin-login.html';
+    window.location.href = '../pages/admin-login.html';
   }
 })();
 
@@ -53,7 +53,7 @@ function showSection(name) {
 // ── Logout ────────────────────────────────────
 function adminLogout() {
   localStorage.removeItem('adminSession');
-  window.location.href = 'admin-login.html';
+  window.location.href = '../pages/admin-login.html';
 }
 
 // ── localStorage helpers ──────────────────────
